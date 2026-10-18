@@ -1,0 +1,23 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MLFLOW_DISABLE_AGENT_HINT: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run pytest -q -p no:warnings
+      - name: End-to-end replay (20 real weeks, both injected faults must be caught)
+        run: |
+          uv run mlops --state state/ci simulate --weeks 20 --report ci-simulation.json
+          python3 - <<'PY'
+          import json
+          d = json.load(open("ci-simulation.json"))
+          assert d["faults"]["corrupt_upload"].startswith("validation"), d["faults"]
+          assert "floor" in d["faults"]["broken_challenger"], d["faults"]
+          assert d["decisions"]["duplicate"] == 1
+          print(json.dumps(d["decisions"]))
+          PY
