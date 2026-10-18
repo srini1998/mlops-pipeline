@@ -192,3 +192,175 @@
     gap: 18px;
   }
 }
+.match-hero {
+  background: #e9efe6;
+  grid-template-columns: 1.15fr 1fr;
+}
+.match-hero h1 {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+.match-hero .intro {
+  max-width: 43ch;
+}
+.pitch {
+  aspect-ratio: 1.2;
+  border: 1px solid #49664c66;
+  background: #d8e5d3;
+  position: relative;
+  align-self: center;
+  min-height: 270px;
+  overflow: hidden;
+}
+.pitch:before,
+.pitch:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 25%;
+  width: 16%;
+  height: 50%;
+  border: 1px solid #49664c66;
+}
+.pitch:after {
+  left: auto;
+  right: -1px;
+}
+.halfway {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  border-left: 1px solid #49664c66;
+}
+.pitch-circle {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border: 1px solid #49664c66;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pitch-node {
+  position: absolute;
+  padding: 13px;
+  background: #244529;
+  color: #f2f7ef;
+  font:
+    10px "Geist Mono Variable",
+    monospace;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+}
+.node-a {
+  left: 10%;
+  top: 50%;
+}
+.node-b {
+  left: 44%;
+  top: 20%;
+}
+.node-c {
+  right: 9%;
+  top: 50%;
+}
+.pitch-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font:
+    10px "Geist Mono Variable",
+    monospace;
+  letter-spacing: 0.04em;
+}
+.football-test {
+  margin-top: 80px;
+  padding-top: 35px;
+  border-top: 1px solid var(--line);
+}
+.match-card {
+  margin-top: 24px;
+  padding: 35px;
+  background: #e9efe6;
+  border-radius: 10px;
+}
+.match-card h3 {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 28px;
+}
+.match-card h3 span {
+  font-size: 14px;
+  align-self: center;
+  color: var(--muted);
+}
+.match-card > strong {
+  font-size: 65px;
+  letter-spacing: -0.07em;
+}
+.match-card > p {
+  font-size: 13px;
+}
+.decision details {
+  margin-top: 35px;
+  font-size: 13px;
+}
+.controls button {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.how a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.how pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.how summary {
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .match-hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+    gap: 35px;
+  }
+  .pitch {
+    min-height: 220px;
+    max-width: 450px;
+  }
+  .match-card {
+    padding: 22px;
+  }
+  .match-card h3 {
+    font-size: 21px;
+  }
+  .comparison {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+.controls {
+  min-width: 0;
+}
+select {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.lab {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+}
+@media (max-width: 760px) {
+  .lab {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

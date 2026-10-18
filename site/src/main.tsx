@@ -1,364 +1,321 @@
 import { createRoot } from "react-dom/client";
-import { useState, useMemo } from "react";
-import { StreamConvergenceBackground } from "@designcodeio/threeui/components/StreamConvergenceBackground";
-import { Lightning, ArrowUpRight } from "@phosphor-icons/react";
-import rows from "./data/electricity.json";
-import source from "./data/provenance.json";
-import recorded from "./data/recorded.json";
-import { train, score, evaluate, type Model } from "./engine";
-import { useModel } from "./ai/useModel";
-import { Shell, Trace, ModelControl, useLanguage } from "./ui";
+import { useMemo, useState, lazy, Suspense } from "react";
+import matches from "./data/football.json";
+import source from "./data/football-provenance.json";
+import {
+  makeExamples,
+  trainFootball,
+  metrics,
+  gateFootball,
+  probability,
+  type FootballModel,
+} from "./football-engine";
+import { Shell, Trace } from "./ui";
 import "./styles.css";
-const pct = (v: number) => (v * 100).toFixed(1) + "%";
+const Electricity = lazy(() =>
+  import("./ElectricityLab").then((m) => ({ default: m.ElectricityLab })),
+);
+const pct = (n: number) => (n * 100).toFixed(1) + "%";
+const examples = makeExamples(matches),
+  validation = examples.filter(
+    (m) => m.date >= "2024-08-01" && m.date < "2025-01-01",
+  ),
+  test = examples.filter((m) => m.date >= "2025-01-01");
 function App() {
-  const { ja, t, toggle } = useLanguage(),
-    ai = useModel();
-  const initial = useMemo(() => train(rows, 1, 7 * 336), []);
-  const [champ, setChamp] = useState<Model>(initial),
-    [previous, setPrevious] = useState<Model | null>(null),
-    [week, setWeek] = useState(8),
-    [gain, setGain] = useState(0.01),
-    [result, setResult] = useState<ReturnType<typeof evaluate> | null>(null),
-    [entries, setEntries] = useState<unknown[]>([]),
-    [explanation, setExplanation] = useState(""),
-    [busy, setBusy] = useState(false);
-  const live = score(champ, rows, week * 336, (week + 1) * 336),
-    staticScore = score(initial, rows, week * 336, (week + 1) * 336);
+  const initial = useMemo(
+    () => trainFootball(examples, "2022-08-01", "First-season model"),
+    [],
+  );
+  const [active, setActive] = useState(initial),
+    [previous, setPrevious] = useState<FootballModel | null>(null),
+    [candidate, setCandidate] = useState<FootballModel | null>(null),
+    [idx, setIdx] = useState(0),
+    [reveal, setReveal] = useState(false),
+    [required, setRequired] = useState(0.005),
+    [entries, setEntries] = useState<unknown[]>([]);
+  const gate = candidate
+      ? gateFootball(active, candidate, validation, required)
+      : null,
+    result = metrics(active, test),
+    match = test[idx],
+    prediction = probability(active, match.x);
   const log = (e: unknown) => setEntries((a) => [...a, e]);
-  function run() {
-    const r = evaluate(rows, week, champ, gain);
-    setResult(r);
-    setExplanation("");
-    log({
-      action: "train/evaluate",
-      trainedThrough: r.candidate.trainedThrough,
-      validationStart: (week - 1) * 336,
-      week,
-      gain,
-      challenger: r.challenger,
-      champion: r.champion,
-      floor: r.floor,
-      pass: r.pass,
-    });
-  }
-  function promote() {
-    if (!result?.pass || result.week !== week || result.gain !== gain) return;
-    setPrevious(champ);
-    setChamp(result.candidate);
-    setResult(null);
-    setExplanation("");
-    log({ action: "promote", week, model: result.candidate });
-  }
-  async function explain() {
-    if (!result) return;
-    setBusy(true);
-    try {
-      const prompt = `Explain this model release decision in 3 short sentences. Do not change the decision or invent values. Gate: ${result.pass ? "PASS" : "KEEP CURRENT"}. Challenger holdout ${pct(result.challenger.accuracy)}; current ${pct(result.champion.accuracy)}; required gain ${pct(gain)}; floor ${pct(result.floor)}. Historical electricity data, not a forecast. ${ja ? "Reply in Japanese." : ""}`;
-      const r = await ai.generate(
-        [{ role: "user", content: prompt }],
-        undefined,
-        160,
-      );
-      setExplanation(r.text);
-      log({ action: "explain", prompt, ...r });
-    } catch (e) {
-      setExplanation(String(e));
-    } finally {
-      setBusy(false);
-    }
-  }
   return (
-    <Shell name="current" number="03" ja={ja} toggle={toggle}>
-      <section className="hero">
-        <div className="flow" aria-hidden="true">
-          <StreamConvergenceBackground
-            hue={0.55}
-            saturation={0.4}
-            speed={0.35}
-          />
-        </div>
+    <Shell name="current / matchday" number="03" ja={false} toggle={() => {}}>
+      <section className="hero match-hero">
         <div>
-          <p className="eyebrow reveal">
-            {t(
-              "A BETTER MODEL. EARNED, NOT ASSUMED.",
-              "良いモデルかどうか、測定して決める。",
-            )}
-          </p>
-          <h1 className="reveal">
-            {t("Keep your", "モデルを")}
+          <p className="eyebrow">FOOTBALL MEETS MACHINE LEARNING</p>
+          <h1>
+            New season.
             <br />
-            {t("model current.", "新鮮に。")}
+            Better model?
           </h1>
-          <p className="intro reveal">
-            {t(
-              "Electricity markets change. Your model should earn its next release. Train a challenger, test it on unseen history, then decide what goes live in this replay.",
-              "電力市場は変わります。新しいモデルを学習し、未知の履歴で比較してから、このリプレイで使うモデルを選びましょう。",
-            )}
+          <p className="intro">
+            Teach a small model using real Premier League results. See whether
+            three seasons of experience beat one, then decide which model gets
+            the next match.
           </p>
-          <a className="cta reveal" href="#lab">
-            {t("Try a release", "リリースを試す")}
-            <ArrowUpRight size={20} />
+          <a className="cta" href="#lab">
+            Train your challenger ↗
           </a>
+          <p className="note">
+            Actual browser training. No account, cloud bill or AI download.
+          </p>
         </div>
-        <div className="hero-stat reveal">
-          <Lightning size={34} />
-          <strong>45,312</strong>
-          <p>{t("real half-hour records", "実際の30分間隔レコード")}</p>
-          <span>NSW / ELEC2 / HISTORICAL</span>
+        <div className="pitch" aria-hidden="true">
+          <div className="halfway" />
+          <div className="pitch-circle" />
+          <span className="pitch-node node-a">TRAIN</span>
+          <span className="pitch-node node-b">TEST</span>
+          <span className="pitch-node node-c">RELEASE</span>
+          <div className="pitch-caption">1,520 MATCHES / 4 SEASONS</div>
         </div>
       </section>
       <main id="lab">
         <div className="section-head">
           <div>
-            <p className="eyebrow">
-              {t("YOU ARE THE RELEASE MANAGER", "あなたがリリース担当者")}
-            </p>
-            <h2>{t("Train. Compare. Decide.", "学習。比較。判断。")}</h2>
+            <p className="eyebrow">YOU PICK THE STARTING MODEL</p>
+            <h2>Earn the next release.</h2>
           </div>
-          <span>
-            {t("Week", "週")} {week} / 100
-          </span>
+          <span>Historical replay · 2021–2025</span>
         </div>
+        <p className="intro">
+          Predict one simple outcome: does the home team win? A draw and an away
+          win both count as “no.” We use only team strength and form available
+          before kickoff.
+        </p>
         <div className="lab">
           <section className="controls">
-            <label>
-              {t("Replay week", "リプレイの週")}
-              <input
-                disabled={busy}
-                aria-label="Replay week"
-                type="range"
-                min="8"
-                max="100"
-                value={week}
-                onChange={(e) => {
-                  setWeek(Number(e.target.value));
-                  setChamp(initial);
-                  setPrevious(null);
-                  setResult(null);
-                  setExplanation("");
-                }}
-              />
-            </label>
+            <h3>1. Train on earlier seasons</h3>
             <p>
-              {t(
-                "Moving weeks resets the active model. The challenger learns from the previous five weeks. The next completed week is held out for the gate. The selected week is a separate future check.",
-                "挑戦モデルは過去5週間で学習。次の1週間を評価用に保留し、選択した週は別の将来チェックに使います。",
-              )}
+              Your starting model learned from {initial.count} matches in
+              2021/22. The challenger learns from the first three seasons.
+              Neither trains on 2024/25 outcomes.
             </p>
-            <label>
-              {t("Required improvement", "必要な改善幅")}
-              <select
-                disabled={busy}
-                value={gain}
-                onChange={(e) => {
-                  setGain(Number(e.target.value));
-                  setResult(null);
-                  setExplanation("");
-                }}
-              >
-                {[0, 0.01, 0.03, 0.05].map((n) => (
-                  <option key={n} value={n}>
-                    {pct(n)} {t("percentage points", "ポイント")}
-                  </option>
-                ))}
-              </select>
+            <button
+              className="cta"
+              onClick={() => {
+                const m = trainFootball(
+                  examples,
+                  "2024-08-01",
+                  "Three-season model",
+                );
+                setCandidate(m);
+                log({
+                  action: "train",
+                  count: m.count,
+                  through: m.through,
+                  weights: m.weights,
+                });
+              }}
+            >
+              Train challenger
+            </button>
+            <label htmlFor="required" style={{ marginTop: 25 }}>
+              Required improvement in probability error
             </label>
-            <button className="cta" onClick={run} disabled={busy}>
-              {t("Train & evaluate", "学習して比較")}
+            <select
+              id="required"
+              value={required}
+              onChange={(e) => {
+                setRequired(Number(e.target.value));
+                log({
+                  action: "change-gate",
+                  required: Number(e.target.value),
+                });
+              }}
+            >
+              <option value={0}>Any measured improvement (exploratory)</option>
+              <option value={0.005}>0.005 lower Brier error</option>
+              <option value={0.02}>0.020 lower Brier error</option>
+              <option value={0.5}>0.500 lower (deliberately strict)</option>
+            </select>
+            <p className="note">
+              Brier error measures how close a probability was to the actual
+              outcome. Lower is better. The challenger must also match or beat
+              the current model’s win/no-win accuracy.
+            </p>
+            <h3>2. Review before switching</h3>
+            <button
+              disabled={!gate?.pass}
+              onClick={() => {
+                if (!candidate || !gate?.pass) return;
+                setPrevious(active);
+                setActive(candidate);
+                setCandidate(null);
+                log({ action: "activate", name: candidate.name, gate });
+              }}
+            >
+              Use this model
+            </button>
+            <button
+              disabled={!previous}
+              onClick={() => {
+                if (!previous) return;
+                setActive(previous);
+                setPrevious(null);
+                setCandidate(null);
+                log({ action: "rollback" });
+              }}
+            >
+              Roll back
             </button>
             <p className="note">
-              {t(
-                "Browser logistic regression, 30 epochs. No labels from the holdout or future week enter training.",
-                "ブラウザのロジスティック回帰、30エポック。評価週や将来週の正解は学習に使いません。",
-              )}
+              This changes the active model in this browser tab. No production
+              service is modified.
             </p>
           </section>
           <section className="decision" aria-live="polite">
-            <div className="decision-label">
-              {result
-                ? result.pass
-                  ? t("READY FOR REVIEW", "確認して昇格")
-                  : t("KEEP THE CURRENT MODEL", "現在のモデルを維持")
-                : t("WAITING FOR A CHALLENGER", "挑戦モデルの準備待ち")}
-            </div>
+            <p className="decision-label">
+              VALIDATION / AUG–DEC 2024 · {validation.length} MATCHES
+            </p>
             <h3>
-              {result
-                ? result.pass
-                  ? t("It cleared the gate.", "条件を満たしました。")
-                  : t("This one stays on the bench.", "今回は見送ります。")
-                : t("Better is a measurement.", "良いかどうかは測定する。")}
+              {gate
+                ? gate.pass
+                  ? "The challenger earned a start."
+                  : "Keep your current model."
+                : "A longer training history has to prove itself."}
             </h3>
-            {result ? (
-              <>
-                <div className="comparison">
-                  <div>
-                    <span>{t("Challenger holdout", "挑戦モデル")}</span>
-                    <strong>{pct(result.challenger.accuracy)}</strong>
-                  </div>
-                  <div>
-                    <span>{t("Current holdout", "現在のモデル")}</span>
-                    <strong>{pct(result.champion.accuracy)}</strong>
-                  </div>
-                  <div>
-                    <span>{t("Minimum floor", "最低基準")}</span>
-                    <strong>{pct(result.floor)}</strong>
-                  </div>
+            <p>
+              {gate
+                ? "These matches were held out of training. The separate later test below measures what happened next."
+                : "Train the challenger to compare both models on exactly the same matches."}
+            </p>
+            {gate && (
+              <div className="comparison">
+                <div>
+                  <strong>{gate.current.brier.toFixed(5)}</strong>
+                  <span>Current Brier error</span>
                 </div>
-                <p>
-                  {t(
-                    "Pass requires the chosen improvement AND majority-class accuracy + 2 points. A pass is permission to compare, not proof of future profit.",
-                    "改善幅と、多数派正解率＋2ポイントの両方が必要です。合格しても将来の収益を保証しません。",
-                  )}
-                </p>
-                <button
-                  className="cta"
-                  onClick={promote}
-                  disabled={busy || !result.pass}
-                >
-                  {t("Promote challenger", "挑戦モデルを昇格")}
-                </button>
-              </>
-            ) : (
-              <p>
-                {t(
-                  "Choose a week, then train a candidate. A release never happens just because a model sounds confident.",
-                  "週を選び、候補を学習します。AI の説明だけでリリースは行いません。",
-                )}
-              </p>
+                <div>
+                  <strong>{gate.candidate.brier.toFixed(5)}</strong>
+                  <span>Challenger Brier error</span>
+                </div>
+                <div>
+                  <strong>{pct(gate.candidate.accuracy)}</strong>
+                  <span>Challenger accuracy</span>
+                </div>
+              </div>
             )}
-            <button
-              className="quiet"
-              disabled={busy || !previous}
-              onClick={() => {
-                if (previous) {
-                  setChamp(previous);
-                  setPrevious(null);
-                  setResult(null);
-                  setExplanation("");
-                  log({ action: "rollback", week });
-                }
-              }}
-            >
-              {t("Roll back last promotion", "直前の昇格を戻す")}
-            </button>
+            <details>
+              <summary>What goes into the model?</summary>
+              <p>
+                Four logistic regression weights: a constant, pre-match Elo
+                difference, last-five-match points difference and
+                last-five-match goal difference. Full-batch gradient descent
+                runs here. Team state is updated only after all features for
+                that date are built.
+              </p>
+            </details>
           </section>
         </div>
-        <section className="future">
-          <header>
-            <h3>{t("How it handles the next week", "次の週での実測")}</h3>
-            <p>
-              {t(
-                "This is held out from both training and release decisions.",
-                "学習にもリリース判断にも使わないデータです。",
-              )}
-            </p>
-          </header>
+        <section className="football-test">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">3 / THE LATER MATCHES</p>
+              <h2>How did it do next?</h2>
+            </div>
+            <span>JAN–MAY 2025 · {test.length} matches</span>
+          </div>
           <div className="comparison">
             <div>
-              <span>{t("Active model", "使用中モデル")}</span>
-              <strong>{pct(live.accuracy)}</strong>
+              <strong>{pct(result.accuracy)}</strong>
+              <span>Active model accuracy</span>
             </div>
             <div>
-              <span>{t("Never retrained", "再学習なし")}</span>
-              <strong>{pct(staticScore.accuracy)}</strong>
+              <strong>{result.brier.toFixed(3)}</strong>
+              <span>Active model Brier error</span>
             </div>
             <div>
-              <span>{t("Repeat last direction", "前回と同じ方向")}</span>
-              <strong>{pct(live.persistence)}</strong>
+              <strong>
+                {pct(test.filter((r) => r.y === 0).length / test.length)}
+              </strong>
+              <span>Always predict “no home win” accuracy</span>
             </div>
           </div>
-          <svg
-            role="img"
-            aria-label={t(
-              "Actual normalized price in selected week",
-              "選択週の実際の正規化価格",
-            )}
-            viewBox="0 0 900 140"
-          >
-            <polyline
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              points={rows
-                .slice(week * 336, (week + 1) * 336)
-                .map((r, i) => `${(i * 900) / 335},${130 - r[2] * 120}`)
-                .join(" ")}
-            />
-          </svg>
           <p className="note">
-            {t(
-              "Line = actual normalized NSW price, not model predictions. Predictions classify UP/DOWN using only prior-period fields. This compact browser model is different from the Python gradient-boosting pipeline.",
-              "線は実際の正規化価格で、予測値ではありません。前の時間帯の情報だけで上昇・下落を分類します。Python 版の勾配ブースティングとは異なる簡易モデルです。",
-            )}
+            The later set is separate from release validation. These are
+            historical measurements, not live forecasts. Browsing results
+            repeatedly makes this an exploratory demo, not a locked competition
+            benchmark.
           </p>
-        </section>
-        <section className="assistant">
-          <div>
-            <h3>{t("Make the decision readable.", "判断をわかりやすく。")}</h3>
+          <label htmlFor="match">Replay a historical match</label>
+          <select
+            id="match"
+            value={idx}
+            onChange={(e) => {
+              setIdx(Number(e.target.value));
+              setReveal(false);
+            }}
+          >
+            {test.map((m, i) => (
+              <option key={m.date + m.home} value={i}>
+                {m.date} · {m.home} vs {m.away}
+              </option>
+            ))}
+          </select>
+          <div className="match-card">
             <p>
-              {t(
-                "Ask the browser AI to explain the measured gate. It can suggest what to inspect; it cannot promote a model or override a failed check.",
-                "ブラウザAIが測定結果を説明します。確認点を提案できますが、昇格や不合格の取り消しはできません。",
-              )}
+              {match.date} / {active.name}
             </p>
-          </div>
-          <div>
-            <ModelControl
-              state={ai.state}
-              load={ai.load}
-              stop={ai.stop}
-              ja={ja}
-            />
-            <button
-              onClick={explain}
-              disabled={busy || !result || ai.state.phase !== "ready"}
-            >
-              {busy
-                ? t("Writing…", "作成中…")
-                : t("Explain this decision", "判断を説明する")}
+            <h3>
+              {match.home}
+              <span>vs</span>
+              {match.away}
+            </h3>
+            <strong>{pct(prediction)}</strong>
+            <p>Estimated home-win probability from pre-match features</p>
+            <button onClick={() => setReveal((r) => !r)}>
+              {reveal ? "Hide result" : "Reveal actual result"}
             </button>
-            <output>{explanation}</output>
+            {reveal && (
+              <p role="status">
+                Final score: {match.home} {match.hg}–{match.ag} {match.away}.
+                Home win: {match.y ? "yes" : "no"}.
+              </p>
+            )}
           </div>
         </section>
         <section id="how" className="how">
-          <p className="eyebrow">{t("WHAT THIS IS FOR", "何に役立つか")}</p>
-          <h2>
-            {t(
-              "A safe rehearsal for model releases.",
-              "モデルリリースのリハーサル。",
-            )}
-          </h2>
+          <p className="eyebrow">THE DATA BEHIND THE MATCHDAY</p>
+          <h2>Real matches. Small model. Clear limits.</h2>
           <p>
-            {t(
-              "Imagine a retailer refreshing a demand classifier every week. New data does not automatically mean a better model. This workbench makes the release gate tangible: keep the incumbent when a challenger regresses, inspect its unseen-week accuracy, and roll back a mistaken promotion.",
-              "小売店が毎週需要モデルを更新する場面を想像してください。新データがあっても改善とは限りません。候補が悪化したら現行を維持し、未知の週を確認し、必要なら元に戻します。",
-            )}
+            This is a release-management tool illustrated through football:
+            train, compare, activate and roll back. It helps show why a newer
+            model should not replace a working model automatically.
           </p>
-          <div className="record">
-            <strong>88.2% / 85.8% / 79.5%</strong>
-            <p>
-              {t(
-                "Recorded Python pipeline / persistence / static model, weeks 16–99. Different model and evaluation from the live browser replay.",
-                "記録済み Python パイプライン／前回方向／固定モデル、16〜99週。上のブラウザとは別のモデル・評価です。",
-              )}
-            </p>
-            <span>
-              {recorded.weeks_replayed}{" "}
-              {t("weeks replayed locally", "週間をローカル再生")}
-            </span>
-          </div>
-          <a href={source.source}>Elec2 / OpenML 151 ↗</a> ·{" "}
-          <a href="https://github.com/srini1998/mlops-pipeline">
-            {t("Source & full methodology", "ソースと評価方法")} ↗
-          </a>
+          <p>
+            All {source.rows} completed results come from{" "}
+            <a href="https://github.com/openfootball/football.json">
+              OpenFootball’s CC0 data ↗
+            </a>
+            . The snapshot spans the 2021/22–2024/25 Premier League seasons. No
+            injuries, lineups or odds are included. New/promoted teams start
+            with neutral ratings. Match probabilities are not calibrated betting
+            advice.
+          </p>
+          <p>
+            <a href="/FOOTBALL-LICENSE.md">Dataset license ↗</a> ·{" "}
+            <a href="/electricity">
+              Explore the original electricity release lab ↗
+            </a>
+          </p>
           <details>
-            <summary>{t("Data provenance", "データの出典")}</summary>
+            <summary>Snapshot provenance and checksums</summary>
             <pre>{JSON.stringify(source, null, 2)}</pre>
           </details>
         </section>
       </main>
-      <Trace ja={ja} entries={entries} />
+      <Trace entries={entries} ja={false} />
     </Shell>
   );
 }
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  location.pathname === "/electricity" ? (
+    <Suspense fallback={<p>Opening electricity lab…</p>}>
+      <Electricity />
+    </Suspense>
+  ) : (
+    <App />
+  ),
+);

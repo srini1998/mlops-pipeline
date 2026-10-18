@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-18T08:12:44.639Z",
+  "initial": {
+    "weights": [
+      -0.2878827146641476,
+      0.4649327780482567,
+      0.30896231215627434,
+      0.804301688292888
+    ],
+    "count": 380,
+    "through": "2022-05-22",
+    "name": "initial"
+  },
+  "candidate": {
+    "weights": [
+      -0.16269173468340642,
+      0.744114090346649,
+      0.35617006591665856,
+      0.6771231134341312
+    ],
+    "count": 1140,
+    "through": "2024-05-19",
+    "name": "candidate"
+  },
+  "validation": {
+    "current": {
+      "n": 188,
+      "accuracy": 0.6223404255319149,
+      "brier": 0.2275049471114045
+    },
+    "candidate": {
+      "n": 188,
+      "accuracy": 0.6436170212765957,
+      "brier": 0.22736453501033252
+    },
+    "pass": false,
+    "required": 0.005
+  },
+  "laterTest": {
+    "initial": {
+      "n": 192,
+      "accuracy": 0.609375,
+      "brier": 0.21494236882096726
+    },
+    "candidate": {
+      "n": 192,
+      "accuracy": 0.6354166666666666,
+      "brier": 0.2133679695303442
+    }
+  },
+  "checks": [
+    "1520 real rows",
+    "380/1140 train split",
+    "future labels do not affect weights",
+    "same-day outcomes do not affect features",
+    "overlapping train/test rejected",
+    "strict gate rejects"
+  ]
+}
