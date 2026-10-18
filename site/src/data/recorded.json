@@ -1,0 +1,2206 @@
+{
+  "weeks_replayed": 100,
+  "decisions": {
+    "promoted": 53,
+    "kept_champion": 45,
+    "failed_floor": 2,
+    "rejected": 1,
+    "duplicate": 1
+  },
+  "faults": {
+    "corrupt_upload": "validation: values outside the normalized [0, 1] range in: ['nswprice']",
+    "broken_challenger": "week_066.csv: holdout accuracy 0.667 < floor 0.685 (majority class 0.635 + 0.05)"
+  },
+  "live_accuracy_weeks_8_plus": {
+    "pipeline_champion": 0.8838,
+    "static_model": 0.8044,
+    "persistence": 0.856
+  },
+  "live_accuracy_weeks_16_plus": {
+    "pipeline_champion": 0.8819,
+    "static_model": 0.795,
+    "persistence": 0.8578
+  },
+  "weekly": [
+    {
+      "week": 8,
+      "pipeline_champion": 0.8988,
+      "static_model": 0.8988,
+      "persistence": 0.8482
+    },
+    {
+      "week": 9,
+      "pipeline_champion": 0.8899,
+      "static_model": 0.8899,
+      "persistence": 0.7917
+    },
+    {
+      "week": 10,
+      "pipeline_champion": 0.9286,
+      "static_model": 0.9226,
+      "persistence": 0.8542
+    },
+    {
+      "week": 11,
+      "pipeline_champion": 0.9226,
+      "static_model": 0.9345,
+      "persistence": 0.8482
+    },
+    {
+      "week": 12,
+      "pipeline_champion": 0.881,
+      "static_model": 0.8899,
+      "persistence": 0.8095
+    },
+    {
+      "week": 13,
+      "pipeline_champion": 0.9077,
+      "static_model": 0.9107,
+      "persistence": 0.8571
+    },
+    {
+      "week": 14,
+      "pipeline_champion": 0.9256,
+      "static_model": 0.9226,
+      "persistence": 0.8542
+    },
+    {
+      "week": 15,
+      "pipeline_champion": 0.875,
+      "static_model": 0.8512,
+      "persistence": 0.8393
+    },
+    {
+      "week": 16,
+      "pipeline_champion": 0.9375,
+      "static_model": 0.9196,
+      "persistence": 0.8899
+    },
+    {
+      "week": 17,
+      "pipeline_champion": 0.881,
+      "static_model": 0.9077,
+      "persistence": 0.8125
+    },
+    {
+      "week": 18,
+      "pipeline_champion": 0.8839,
+      "static_model": 0.8512,
+      "persistence": 0.756
+    },
+    {
+      "week": 19,
+      "pipeline_champion": 0.9077,
+      "static_model": 0.9018,
+      "persistence": 0.8185
+    },
+    {
+      "week": 20,
+      "pipeline_champion": 0.8988,
+      "static_model": 0.9137,
+      "persistence": 0.8542
+    },
+    {
+      "week": 21,
+      "pipeline_champion": 0.8869,
+      "static_model": 0.869,
+      "persistence": 0.8244
+    },
+    {
+      "week": 22,
+      "pipeline_champion": 0.8988,
+      "static_model": 0.8988,
+      "persistence": 0.8304
+    },
+    {
+      "week": 23,
+      "pipeline_champion": 0.9375,
+      "static_model": 0.8899,
+      "persistence": 0.8423
+    },
+    {
+      "week": 24,
+      "pipeline_champion": 0.9196,
+      "static_model": 0.9018,
+      "persistence": 0.8006
+    },
+    {
+      "week": 25,
+      "pipeline_champion": 0.872,
+      "static_model": 0.8958,
+      "persistence": 0.8512
+    },
+    {
+      "week": 26,
+      "pipeline_champion": 0.9167,
+      "static_model": 0.8869,
+      "persistence": 0.8393
+    },
+    {
+      "week": 27,
+      "pipeline_champion": 0.9048,
+      "static_model": 0.9286,
+      "persistence": 0.875
+    },
+    {
+      "week": 28,
+      "pipeline_champion": 0.9048,
+      "static_model": 0.9256,
+      "persistence": 0.8423
+    },
+    {
+      "week": 29,
+      "pipeline_champion": 0.9405,
+      "static_model": 0.9256,
+      "persistence": 0.8601
+    },
+    {
+      "week": 30,
+      "pipeline_champion": 0.9167,
+      "static_model": 0.9256,
+      "persistence": 0.8393
+    },
+    {
+      "week": 31,
+      "pipeline_champion": 0.9226,
+      "static_model": 0.8988,
+      "persistence": 0.8274
+    },
+    {
+      "week": 32,
+      "pipeline_champion": 0.9018,
+      "static_model": 0.869,
+      "persistence": 0.8036
+    },
+    {
+      "week": 33,
+      "pipeline_champion": 0.869,
+      "static_model": 0.872,
+      "persistence": 0.8482
+    },
+    {
+      "week": 34,
+      "pipeline_champion": 0.8899,
+      "static_model": 0.9107,
+      "persistence": 0.872
+    },
+    {
+      "week": 35,
+      "pipeline_champion": 0.8601,
+      "static_model": 0.8839,
+      "persistence": 0.8333
+    },
+    {
+      "week": 36,
+      "pipeline_champion": 0.878,
+      "static_model": 0.8363,
+      "persistence": 0.8065
+    },
+    {
+      "week": 37,
+      "pipeline_champion": 0.8482,
+      "static_model": 0.9167,
+      "persistence": 0.9256
+    },
+    {
+      "week": 38,
+      "pipeline_champion": 0.8839,
+      "static_model": 0.9018,
+      "persistence": 0.872
+    },
+    {
+      "week": 39,
+      "pipeline_champion": 0.9048,
+      "static_model": 0.9196,
+      "persistence": 0.8929
+    },
+    {
+      "week": 40,
+      "pipeline_champion": 0.9286,
+      "static_model": 0.9196,
+      "persistence": 0.9107
+    },
+    {
+      "week": 41,
+      "pipeline_champion": 0.9315,
+      "static_model": 0.8869,
+      "persistence": 0.9048
+    },
+    {
+      "week": 42,
+      "pipeline_champion": 0.881,
+      "static_model": 0.9048,
+      "persistence": 0.8631
+    },
+    {
+      "week": 43,
+      "pipeline_champion": 0.878,
+      "static_model": 0.9286,
+      "persistence": 0.8542
+    },
+    {
+      "week": 44,
+      "pipeline_champion": 0.7411,
+      "static_model": 0.8542,
+      "persistence": 0.8631
+    },
+    {
+      "week": 45,
+      "pipeline_champion": 0.9107,
+      "static_model": 0.872,
+      "persistence": 0.875
+    },
+    {
+      "week": 46,
+      "pipeline_champion": 0.8095,
+      "static_model": 0.8244,
+      "persistence": 0.7917
+    },
+    {
+      "week": 47,
+      "pipeline_champion": 0.8571,
+      "static_model": 0.875,
+      "persistence": 0.8571
+    },
+    {
+      "week": 48,
+      "pipeline_champion": 0.8661,
+      "static_model": 0.8333,
+      "persistence": 0.8155
+    },
+    {
+      "week": 49,
+      "pipeline_champion": 0.8452,
+      "static_model": 0.8423,
+      "persistence": 0.8452
+    },
+    {
+      "week": 50,
+      "pipeline_champion": 0.8958,
+      "static_model": 0.8423,
+      "persistence": 0.8512
+    },
+    {
+      "week": 51,
+      "pipeline_champion": 0.9018,
+      "static_model": 0.8661,
+      "persistence": 0.8542
+    },
+    {
+      "week": 52,
+      "pipeline_champion": 0.8929,
+      "static_model": 0.872,
+      "persistence": 0.881
+    },
+    {
+      "week": 53,
+      "pipeline_champion": 0.8631,
+      "static_model": 0.8601,
+      "persistence": 0.8482
+    },
+    {
+      "week": 54,
+      "pipeline_champion": 0.8839,
+      "static_model": 0.8512,
+      "persistence": 0.8244
+    },
+    {
+      "week": 55,
+      "pipeline_champion": 0.9613,
+      "static_model": 0.8958,
+      "persistence": 0.8929
+    },
+    {
+      "week": 56,
+      "pipeline_champion": 0.744,
+      "static_model": 0.6637,
+      "persistence": 0.9167
+    },
+    {
+      "week": 57,
+      "pipeline_champion": 0.9018,
+      "static_model": 0.7619,
+      "persistence": 0.8452
+    },
+    {
+      "week": 58,
+      "pipeline_champion": 0.9405,
+      "static_model": 0.7798,
+      "persistence": 0.869
+    },
+    {
+      "week": 59,
+      "pipeline_champion": 0.869,
+      "static_model": 0.7054,
+      "persistence": 0.8571
+    },
+    {
+      "week": 60,
+      "pipeline_champion": 0.8393,
+      "static_model": 0.6786,
+      "persistence": 0.8185
+    },
+    {
+      "week": 61,
+      "pipeline_champion": 0.8601,
+      "static_model": 0.631,
+      "persistence": 0.8393
+    },
+    {
+      "week": 62,
+      "pipeline_champion": 0.9018,
+      "static_model": 0.8185,
+      "persistence": 0.8006
+    },
+    {
+      "week": 63,
+      "pipeline_champion": 0.9077,
+      "static_model": 0.8929,
+      "persistence": 0.8065
+    },
+    {
+      "week": 64,
+      "pipeline_champion": 0.8661,
+      "static_model": 0.7708,
+      "persistence": 0.8423
+    },
+    {
+      "week": 65,
+      "pipeline_champion": 0.875,
+      "static_model": 0.8185,
+      "persistence": 0.8006
+    },
+    {
+      "week": 66,
+      "pipeline_champion": 0.8393,
+      "static_model": 0.7798,
+      "persistence": 0.8125
+    },
+    {
+      "week": 67,
+      "pipeline_champion": 0.7351,
+      "static_model": 0.5446,
+      "persistence": 0.881
+    },
+    {
+      "week": 68,
+      "pipeline_champion": 0.8571,
+      "static_model": 0.5952,
+      "persistence": 0.8512
+    },
+    {
+      "week": 69,
+      "pipeline_champion": 0.8542,
+      "static_model": 0.7321,
+      "persistence": 0.875
+    },
+    {
+      "week": 70,
+      "pipeline_champion": 0.8601,
+      "static_model": 0.75,
+      "persistence": 0.8304
+    },
+    {
+      "week": 71,
+      "pipeline_champion": 0.8452,
+      "static_model": 0.6458,
+      "persistence": 0.9077
+    },
+    {
+      "week": 72,
+      "pipeline_champion": 0.8899,
+      "static_model": 0.7827,
+      "persistence": 0.9077
+    },
+    {
+      "week": 73,
+      "pipeline_champion": 0.8661,
+      "static_model": 0.6786,
+      "persistence": 0.8631
+    },
+    {
+      "week": 74,
+      "pipeline_champion": 0.881,
+      "static_model": 0.7589,
+      "persistence": 0.8423
+    },
+    {
+      "week": 75,
+      "pipeline_champion": 0.8601,
+      "static_model": 0.7738,
+      "persistence": 0.8363
+    },
+    {
+      "week": 76,
+      "pipeline_champion": 0.9167,
+      "static_model": 0.8006,
+      "persistence": 0.8839
+    },
+    {
+      "week": 77,
+      "pipeline_champion": 0.9048,
+      "static_model": 0.8333,
+      "persistence": 0.8899
+    },
+    {
+      "week": 78,
+      "pipeline_champion": 0.878,
+      "static_model": 0.8304,
+      "persistence": 0.8661
+    },
+    {
+      "week": 79,
+      "pipeline_champion": 0.9226,
+      "static_model": 0.8363,
+      "persistence": 0.8958
+    },
+    {
+      "week": 80,
+      "pipeline_champion": 0.9286,
+      "static_model": 0.8423,
+      "persistence": 0.9464
+    },
+    {
+      "week": 81,
+      "pipeline_champion": 0.8661,
+      "static_model": 0.7827,
+      "persistence": 0.9315
+    },
+    {
+      "week": 82,
+      "pipeline_champion": 0.878,
+      "static_model": 0.7292,
+      "persistence": 0.881
+    },
+    {
+      "week": 83,
+      "pipeline_champion": 0.872,
+      "static_model": 0.753,
+      "persistence": 0.8631
+    },
+    {
+      "week": 84,
+      "pipeline_champion": 0.8482,
+      "static_model": 0.6577,
+      "persistence": 0.8512
+    },
+    {
+      "week": 85,
+      "pipeline_champion": 0.8631,
+      "static_model": 0.6637,
+      "persistence": 0.9137
+    },
+    {
+      "week": 86,
+      "pipeline_champion": 0.9137,
+      "static_model": 0.7083,
+      "persistence": 0.9048
+    },
+    {
+      "week": 87,
+      "pipeline_champion": 0.9286,
+      "static_model": 0.622,
+      "persistence": 0.8899
+    },
+    {
+      "week": 88,
+      "pipeline_champion": 0.9196,
+      "static_model": 0.6399,
+      "persistence": 0.881
+    },
+    {
+      "week": 89,
+      "pipeline_champion": 0.9226,
+      "static_model": 0.6964,
+      "persistence": 0.8929
+    },
+    {
+      "week": 90,
+      "pipeline_champion": 0.8988,
+      "static_model": 0.6042,
+      "persistence": 0.8631
+    },
+    {
+      "week": 91,
+      "pipeline_champion": 0.875,
+      "static_model": 0.8006,
+      "persistence": 0.8512
+    },
+    {
+      "week": 92,
+      "pipeline_champion": 0.8423,
+      "static_model": 0.628,
+      "persistence": 0.8095
+    },
+    {
+      "week": 93,
+      "pipeline_champion": 0.8601,
+      "static_model": 0.5923,
+      "persistence": 0.8571
+    },
+    {
+      "week": 94,
+      "pipeline_champion": 0.8393,
+      "static_model": 0.6637,
+      "persistence": 0.8631
+    },
+    {
+      "week": 95,
+      "pipeline_champion": 0.9018,
+      "static_model": 0.6518,
+      "persistence": 0.9018
+    },
+    {
+      "week": 96,
+      "pipeline_champion": 0.875,
+      "static_model": 0.4762,
+      "persistence": 0.8482
+    },
+    {
+      "week": 97,
+      "pipeline_champion": 0.8929,
+      "static_model": 0.5238,
+      "persistence": 0.8958
+    },
+    {
+      "week": 98,
+      "pipeline_champion": 0.9196,
+      "static_model": 0.6369,
+      "persistence": 0.9077
+    },
+    {
+      "week": 99,
+      "pipeline_champion": 0.8095,
+      "static_model": 0.7679,
+      "persistence": 0.8095
+    }
+  ],
+  "batches": [
+    {
+      "batch": "week_000.csv",
+      "data_sha256": "92ef0e06f308742f3b43819aaa8449bcc33c80f9bf0c4c45751cde99c327fc80",
+      "status": "promoted",
+      "reason": "first model",
+      "champion_before": null,
+      "champion_after": "1",
+      "champion_live_accuracy": null,
+      "challenger_version": "1",
+      "challenger_holdout_accuracy": 0.7083,
+      "champion_holdout_accuracy": null,
+      "extra": {
+        "mlflow_run_id": "8d5e6b54598b4f539beb3a50803291e2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_001.csv",
+      "data_sha256": "02f43d5780aea0eda4b02e266dc8a5495ea66327ab2828ea92365812ee274f97",
+      "status": "promoted",
+      "reason": "challenger 0.885 >= champion 0.792 + 0.005",
+      "champion_before": "1",
+      "champion_after": "2",
+      "champion_live_accuracy": 0.7143,
+      "challenger_version": "2",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.7917,
+      "extra": {
+        "mlflow_run_id": "e60d6b4cd1bb42d99c5a58a7bf9ebc6b",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_002.csv",
+      "data_sha256": "34cacb12e390dd7c7a9b8a53794f666b8cb3f0df19bfdda46262b8531b3c47c7",
+      "status": "kept_champion",
+      "reason": "challenger 0.812 did not beat champion 0.865 + 0.005",
+      "champion_before": "2",
+      "champion_after": "2",
+      "champion_live_accuracy": 0.872,
+      "challenger_version": "3",
+      "challenger_holdout_accuracy": 0.8125,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "39000be32bd545d98a318ee584850678",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_003.csv",
+      "data_sha256": "63a6fb78d224e3100a13ca6945efa8cf333d7704db65778b0ebd74b6e26bdf98",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.927 + 0.005",
+      "champion_before": "2",
+      "champion_after": "4",
+      "champion_live_accuracy": 0.9315,
+      "challenger_version": "4",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "e789df75528e4c6f81d679f214550f34",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_004.csv",
+      "data_sha256": "94e933049a2f94ca58023e9d1a851e789cdd1803af2c4690ad08aad286706ce9",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.938 + 0.005",
+      "champion_before": "4",
+      "champion_after": "5",
+      "champion_live_accuracy": 0.9137,
+      "challenger_version": "5",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "a20207b086d347d894e49afcaa584601",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_005.csv",
+      "data_sha256": "6ab9b4ef6dbe21ce5f749ca40eb0d6f854f07dbb5265298c5d054b5fdc779262",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.896 + 0.005",
+      "champion_before": "5",
+      "champion_after": "5",
+      "champion_live_accuracy": 0.881,
+      "challenger_version": "6",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "6822588d1de8447d94f1628ff30d8c2b",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_006.csv",
+      "data_sha256": "0f6cd0cd4240452bfe0176d644a2f28962ad1fc7ccec5e1f19231f03e082ea2b",
+      "status": "promoted",
+      "reason": "challenger 0.979 >= champion 0.958 + 0.005",
+      "champion_before": "5",
+      "champion_after": "7",
+      "champion_live_accuracy": 0.9167,
+      "challenger_version": "7",
+      "challenger_holdout_accuracy": 0.9792,
+      "champion_holdout_accuracy": 0.9583,
+      "extra": {
+        "mlflow_run_id": "bea83f11be49483ea6e4c387143c7583",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_007.csv",
+      "data_sha256": "7a39e38578686aade0d1d578b191ea7469c83cd956bd91fb8b6425aa59bd5fa5",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.938 + 0.005",
+      "champion_before": "7",
+      "champion_after": "8",
+      "champion_live_accuracy": 0.872,
+      "challenger_version": "8",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "8d5cee2dd26040298043728738f8b337",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_008.csv",
+      "data_sha256": "b04a2f22473122b52020eba04d562ccfe08afb8c913a7ee4d4f4390105dac75c",
+      "status": "kept_champion",
+      "reason": "challenger 0.979 did not beat champion 0.979 + 0.005",
+      "champion_before": "8",
+      "champion_after": "8",
+      "champion_live_accuracy": 0.8988,
+      "challenger_version": "9",
+      "challenger_holdout_accuracy": 0.9792,
+      "champion_holdout_accuracy": 0.9792,
+      "extra": {
+        "mlflow_run_id": "a445ba12a89449a3bd7e7d911ad04771",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_009.csv",
+      "data_sha256": "39b4e284641f6e1d5a4786c42259c17800f9a6eb3cb5c1b9b571a6db69b79d02",
+      "status": "kept_champion",
+      "reason": "challenger 0.927 did not beat champion 0.927 + 0.005",
+      "champion_before": "8",
+      "champion_after": "8",
+      "champion_live_accuracy": 0.8899,
+      "challenger_version": "10",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "bf72cd804da14cc8aaf6392831287412",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_010.csv",
+      "data_sha256": "1dcbcf790b3ba7a230eafffe351f7a336decc1873ce9ab2eb8c98b9d6c6412f7",
+      "status": "kept_champion",
+      "reason": "challenger 0.927 did not beat champion 0.927 + 0.005",
+      "champion_before": "8",
+      "champion_after": "8",
+      "champion_live_accuracy": 0.9286,
+      "challenger_version": "11",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "fb13499e4ea743ee94e6939e2602af69",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_011.csv",
+      "data_sha256": "4c3331a873b1674e5a750073e84f5f5e672f193d54a6428e2fbce56aa924ba63",
+      "status": "promoted",
+      "reason": "challenger 0.979 >= champion 0.948 + 0.005",
+      "champion_before": "8",
+      "champion_after": "12",
+      "champion_live_accuracy": 0.9226,
+      "challenger_version": "12",
+      "challenger_holdout_accuracy": 0.9792,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "9df6d923b6b2437a96edac71ec79c6f8",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_012.csv",
+      "data_sha256": "4d46bae477590d75b82ed79a2048de8fbcaeb1e1ccf691e78a6fbc280f6dae3c",
+      "status": "kept_champion",
+      "reason": "challenger 0.823 did not beat champion 0.823 + 0.005",
+      "champion_before": "12",
+      "champion_after": "12",
+      "champion_live_accuracy": 0.881,
+      "challenger_version": "13",
+      "challenger_holdout_accuracy": 0.8229,
+      "champion_holdout_accuracy": 0.8229,
+      "extra": {
+        "mlflow_run_id": "87c4212552b84b5bbba365b7ea09f3a7",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_013.csv",
+      "data_sha256": "6dc98e3158eb3ea726436e5c693ae767c7cd1c9fcd9f9a72acad6eb61f22ca7a",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.917 + 0.005",
+      "champion_before": "12",
+      "champion_after": "12",
+      "champion_live_accuracy": 0.9077,
+      "challenger_version": "14",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "c47814d281f349e6a12d9273444dd3db",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_014.csv",
+      "data_sha256": "0b3b162aee7f4d7f4155a57c46f091fdb511a32f750a557056f2f758bb27703a",
+      "status": "kept_champion",
+      "reason": "challenger 0.938 did not beat champion 0.938 + 0.005",
+      "champion_before": "12",
+      "champion_after": "12",
+      "champion_live_accuracy": 0.9256,
+      "challenger_version": "15",
+      "challenger_holdout_accuracy": 0.9375,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "d426de8b36474e58bd082b020ce850f0",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_015.csv",
+      "data_sha256": "17a392beed0d01db8aaf6b7aa77e44adb4fe7678e139f7d31c66c0ff274edacb",
+      "status": "promoted",
+      "reason": "challenger 0.917 >= champion 0.844 + 0.005",
+      "champion_before": "12",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.875,
+      "challenger_version": "16",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.8438,
+      "extra": {
+        "mlflow_run_id": "18c92dbd192f450bbe29210958c49405",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_016.csv",
+      "data_sha256": "1375b64023b6319581cae1ab347ca1d312936628e9f363520922936e4f6f75e1",
+      "status": "kept_champion",
+      "reason": "challenger 0.844 did not beat champion 0.865 + 0.005",
+      "champion_before": "16",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.9375,
+      "challenger_version": "17",
+      "challenger_holdout_accuracy": 0.8438,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "b998353116934a089ce134625df59072",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_017.csv",
+      "data_sha256": "d81c3b43a6996426d9110952e109306154ef2310e0085d7fa5c1b870f5205ba8",
+      "status": "kept_champion",
+      "reason": "challenger 0.906 did not beat champion 0.917 + 0.005",
+      "champion_before": "16",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.881,
+      "challenger_version": "18",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "e7a2bea38f4b46cf8a2315bbfbc77976",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_018.csv",
+      "data_sha256": "cae443ba8f0a505eed5006eab0189d1ec95a5f7beee4c6f514582d327ee8be71",
+      "status": "kept_champion",
+      "reason": "challenger 0.854 did not beat champion 0.885 + 0.005",
+      "champion_before": "16",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.8839,
+      "challenger_version": "19",
+      "challenger_holdout_accuracy": 0.8542,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "1dd6eb4c81b94d4b8ff204eeb17338ae",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_019.csv",
+      "data_sha256": "9103bd6fa894811159eecf3288cb7b20d00e18b15897a18910ce1e5531b0ba5b",
+      "status": "kept_champion",
+      "reason": "challenger 0.875 did not beat champion 0.906 + 0.005",
+      "champion_before": "16",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.9077,
+      "challenger_version": "20",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "4b0554872ccd4b69b43e5dc15f1de623",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_020.csv",
+      "data_sha256": "0e2512efe8fb4002f63df99eb581399e7a3498ae7a083118555fc7fdedf20b6b",
+      "status": "kept_champion",
+      "reason": "challenger 0.844 did not beat champion 0.844 + 0.005",
+      "champion_before": "16",
+      "champion_after": "16",
+      "champion_live_accuracy": 0.8988,
+      "challenger_version": "21",
+      "challenger_holdout_accuracy": 0.8438,
+      "champion_holdout_accuracy": 0.8438,
+      "extra": {
+        "mlflow_run_id": "aea9241fb1554855baeecf8fad811593",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_021.csv",
+      "data_sha256": "9478527706a7b6e175c6ecb62e4410c9f198acaa50fdbcd5e423ad44680eb9b4",
+      "status": "promoted",
+      "reason": "challenger 0.948 >= champion 0.927 + 0.005",
+      "champion_before": "16",
+      "champion_after": "22",
+      "champion_live_accuracy": 0.8869,
+      "challenger_version": "22",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "7ca83477007d45d9b742f5ac1c119fbd",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_022.csv",
+      "data_sha256": "00b7e0175df7e0cd52be2a524c12ad671277c86e7562fefa7f9f0f41752d4224",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.896 + 0.005",
+      "champion_before": "22",
+      "champion_after": "22",
+      "champion_live_accuracy": 0.8988,
+      "challenger_version": "23",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "cca9130a79284b70adc56ff146bae1fa",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_023.csv",
+      "data_sha256": "e05f3fc1c31fb33faaf8c47ed7233fe76ca753f8882f406eec34fa3f95efd941",
+      "status": "kept_champion",
+      "reason": "challenger 0.938 did not beat champion 0.948 + 0.005",
+      "champion_before": "22",
+      "champion_after": "22",
+      "champion_live_accuracy": 0.9375,
+      "challenger_version": "24",
+      "challenger_holdout_accuracy": 0.9375,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "cec61df2a95149e8bf6e81b876e8cc2c",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_024.csv",
+      "data_sha256": "a089a5d2d4c2e3adc479c8fb697aee981b0d46a3ad00b7c97ed8c20165b78b7d",
+      "status": "kept_champion",
+      "reason": "challenger 0.896 did not beat champion 0.917 + 0.005",
+      "champion_before": "22",
+      "champion_after": "22",
+      "champion_live_accuracy": 0.9196,
+      "challenger_version": "25",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "5ba9079cb1094e38a9c029c4cdf04762",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_025.csv",
+      "data_sha256": "c52d21013cafa651841822ecaf12bd6cf8dd16d60183a0bb59ee1755eb4e41bb",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.917 + 0.005",
+      "champion_before": "22",
+      "champion_after": "26",
+      "champion_live_accuracy": 0.872,
+      "challenger_version": "26",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "7a89f00951014efcaa1c490daeb3c6c2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_026.csv",
+      "data_sha256": "9fdc5196b781e77f44b673482fabe4be46cb293f878870185e78145d679e3dba",
+      "status": "promoted",
+      "reason": "challenger 0.917 >= champion 0.906 + 0.005",
+      "champion_before": "26",
+      "champion_after": "27",
+      "champion_live_accuracy": 0.9167,
+      "challenger_version": "27",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "9bfb87fa870e4842aed7fb9fc18552d2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_027.csv",
+      "data_sha256": "86f6db09302b370f51453d11ed1f4274d66d154f51ae63a641b095aa41aac42c",
+      "status": "kept_champion",
+      "reason": "challenger 0.948 did not beat champion 0.948 + 0.005",
+      "champion_before": "27",
+      "champion_after": "27",
+      "champion_live_accuracy": 0.9048,
+      "challenger_version": "28",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "922056c9fcd64dfabbf2abc91335c270",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_028.csv",
+      "data_sha256": "81ab5f386841922fb4b1870412638b3d7081e6e3f0b2f56ad28ce6feb579d68e",
+      "status": "kept_champion",
+      "reason": "challenger 0.927 did not beat champion 0.938 + 0.005",
+      "champion_before": "27",
+      "champion_after": "27",
+      "champion_live_accuracy": 0.9048,
+      "challenger_version": "29",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "36c9d255fcf4414594255df638c92fb7",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_029.csv",
+      "data_sha256": "2e92a1c7b10de4b3edfc358a07014acc6ddd89e329e15efdab56acbfddfd785f",
+      "status": "promoted",
+      "reason": "challenger 0.969 >= champion 0.948 + 0.005",
+      "champion_before": "27",
+      "champion_after": "30",
+      "champion_live_accuracy": 0.9405,
+      "challenger_version": "30",
+      "challenger_holdout_accuracy": 0.9688,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "d088873273c94c469921c3c169ca629a",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_030.csv",
+      "data_sha256": "73e7f9ec7685f9eba61bf4ea3393adb980df290449149ae6ed68784fee993c65",
+      "status": "kept_champion",
+      "reason": "challenger 0.948 did not beat champion 0.969 + 0.005",
+      "champion_before": "30",
+      "champion_after": "30",
+      "champion_live_accuracy": 0.9167,
+      "challenger_version": "31",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9688,
+      "extra": {
+        "mlflow_run_id": "69ac41806e764ad6a5043ae4b84c2354",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_031.csv",
+      "data_sha256": "5330a73c4e5a8f02699592d477f452c10253dd7659032218a2169c89119be882",
+      "status": "promoted",
+      "reason": "challenger 0.969 >= champion 0.958 + 0.005",
+      "champion_before": "30",
+      "champion_after": "32",
+      "champion_live_accuracy": 0.9226,
+      "challenger_version": "32",
+      "challenger_holdout_accuracy": 0.9688,
+      "champion_holdout_accuracy": 0.9583,
+      "extra": {
+        "mlflow_run_id": "dc82f773bc4a4ea0b0aebdef2d5a47e2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_032.csv",
+      "data_sha256": "37911a71510bfc0009476b66f4dd26935db2a1911ed5cb4076351ce059450ce8",
+      "status": "kept_champion",
+      "reason": "challenger 0.896 did not beat champion 0.896 + 0.005",
+      "champion_before": "32",
+      "champion_after": "32",
+      "champion_live_accuracy": 0.9018,
+      "challenger_version": "33",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "e5ab5c3860d54c19b71122296a2cea67",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_033_corrupt.csv",
+      "data_sha256": null,
+      "status": "rejected",
+      "reason": "validation: values outside the normalized [0, 1] range in: ['nswprice']",
+      "champion_before": "32",
+      "champion_after": "32",
+      "champion_live_accuracy": null,
+      "challenger_version": null,
+      "challenger_holdout_accuracy": null,
+      "champion_holdout_accuracy": null,
+      "extra": {}
+    },
+    {
+      "batch": "week_033.csv",
+      "data_sha256": "87fc523118a786093aac85cdd976c72f17a5a0fd9d9666f709f1258480add6d2",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.875 + 0.005",
+      "champion_before": "32",
+      "champion_after": "34",
+      "champion_live_accuracy": 0.869,
+      "challenger_version": "34",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "2a29374a552d434fb851072eed3d478c",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_034.csv",
+      "data_sha256": "568eccb1a1e3e815f02d3fc409c26c08b09b229d8dc4057ab8374d8555c35cb3",
+      "status": "promoted",
+      "reason": "challenger 0.969 >= champion 0.948 + 0.005",
+      "champion_before": "34",
+      "champion_after": "35",
+      "champion_live_accuracy": 0.8899,
+      "challenger_version": "35",
+      "challenger_holdout_accuracy": 0.9688,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "449da0355f6e4fcba7a060cb7e330746",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_035.csv",
+      "data_sha256": "14b8443c0e50b37758eaa4e01dce67541479e20bc588155208134b0490b295f7",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.885 + 0.005",
+      "champion_before": "35",
+      "champion_after": "36",
+      "champion_live_accuracy": 0.8601,
+      "challenger_version": "36",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "91d1d215fe684e19b9f30b2e9e46e214",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_036.csv",
+      "data_sha256": "9e01e8907b75e090f6b16dcd9e99abd0bababda7df2094df72d1de63030fc364",
+      "status": "promoted",
+      "reason": "challenger 0.865 >= champion 0.854 + 0.005",
+      "champion_before": "36",
+      "champion_after": "37",
+      "champion_live_accuracy": 0.878,
+      "challenger_version": "37",
+      "challenger_holdout_accuracy": 0.8646,
+      "champion_holdout_accuracy": 0.8542,
+      "extra": {
+        "mlflow_run_id": "fa8e295f304d40d5882db4713c36981c",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_037.csv",
+      "data_sha256": "484fd36ee2f0d669f821011e698669dce2998d9981f1d8722b340c072d9269a3",
+      "status": "kept_champion",
+      "reason": "challenger 0.938 did not beat champion 0.969 + 0.005",
+      "champion_before": "37",
+      "champion_after": "37",
+      "champion_live_accuracy": 0.8482,
+      "challenger_version": "38",
+      "challenger_holdout_accuracy": 0.9375,
+      "champion_holdout_accuracy": 0.9688,
+      "extra": {
+        "mlflow_run_id": "fcf42863432a4f41a4ab2b7ce6125fca",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_038.csv",
+      "data_sha256": "4a3ce5a3b5acabb127dea053608e68396f82462349f94eb9e49ff7ac1bfd8b51",
+      "status": "promoted",
+      "reason": "challenger 0.917 >= champion 0.885 + 0.005",
+      "champion_before": "37",
+      "champion_after": "39",
+      "champion_live_accuracy": 0.8839,
+      "challenger_version": "39",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "6703e6d0e4944b43924077a29038e7f2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_039.csv",
+      "data_sha256": "5b47b424cf86d3d4b134f7e68976be922594dc04bda73bc0e0e8269231f10a6f",
+      "status": "kept_champion",
+      "reason": "challenger 0.875 did not beat champion 0.896 + 0.005",
+      "champion_before": "39",
+      "champion_after": "39",
+      "champion_live_accuracy": 0.9048,
+      "challenger_version": "40",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "e4ecb907fa784deaa3702a8c7af989a3",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_040.csv",
+      "data_sha256": "1b9728f93ff38953d67c85f3c5daa68039e272a7681363a177ea90b3990be49c",
+      "status": "promoted",
+      "reason": "challenger 0.948 >= champion 0.927 + 0.005",
+      "champion_before": "39",
+      "champion_after": "41",
+      "champion_live_accuracy": 0.9286,
+      "challenger_version": "41",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "8a14bf13cb08477481af0a952d931a47",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_041.csv",
+      "data_sha256": "aafd7a033ce161c98212f8a04dd7ac1d6920b42be1ad90cf833b7cd9a340b87d",
+      "status": "kept_champion",
+      "reason": "challenger 0.875 did not beat champion 0.875 + 0.005",
+      "champion_before": "41",
+      "champion_after": "41",
+      "champion_live_accuracy": 0.9315,
+      "challenger_version": "42",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "5c78e4a73fc448519251d091a2cfdae4",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_042.csv",
+      "data_sha256": "01cf9562c74a89fd9c2c131b32c2266a2087ddcd11379c05357f2b231a9fccef",
+      "status": "kept_champion",
+      "reason": "challenger 0.833 did not beat champion 0.854 + 0.005",
+      "champion_before": "41",
+      "champion_after": "41",
+      "champion_live_accuracy": 0.881,
+      "challenger_version": "43",
+      "challenger_holdout_accuracy": 0.8333,
+      "champion_holdout_accuracy": 0.8542,
+      "extra": {
+        "mlflow_run_id": "9226e15f7ba94c17a209a2b57baf5e7d",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_043.csv",
+      "data_sha256": "f17207667fe8f27b512defe82d1fac689db417495a13753d0307c95b8c701419",
+      "status": "promoted",
+      "reason": "challenger 0.990 >= champion 0.896 + 0.005",
+      "champion_before": "41",
+      "champion_after": "44",
+      "champion_live_accuracy": 0.878,
+      "challenger_version": "44",
+      "challenger_holdout_accuracy": 0.9896,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "b8a999cd72b742de92f0b3e4a396dbd8",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_044.csv",
+      "data_sha256": "087b532188881c1c90c91ecf0d1f1e3b457a4c226b50b78a2b5c2878d9e0cf16",
+      "status": "promoted",
+      "reason": "challenger 0.865 >= champion 0.740 + 0.005",
+      "champion_before": "44",
+      "champion_after": "45",
+      "champion_live_accuracy": 0.7411,
+      "challenger_version": "45",
+      "challenger_holdout_accuracy": 0.8646,
+      "champion_holdout_accuracy": 0.7396,
+      "extra": {
+        "mlflow_run_id": "d05d96dcc8d64ac59eec0681a8cfe8de",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_045.csv",
+      "data_sha256": "b0cd9575a9b02eb0baa332d2f9b3e871e883d28f6c131b178e0cb6e175f116dc",
+      "status": "kept_champion",
+      "reason": "challenger 0.865 did not beat champion 0.865 + 0.005",
+      "champion_before": "45",
+      "champion_after": "45",
+      "champion_live_accuracy": 0.9107,
+      "challenger_version": "46",
+      "challenger_holdout_accuracy": 0.8646,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "27821d88ddde42d083eb3167c6f93cc5",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_046.csv",
+      "data_sha256": "f738715b791b6c49772d8e30df3d45f3712438b733575b5fc3f00ec98d976178",
+      "status": "promoted",
+      "reason": "challenger 0.812 >= champion 0.708 + 0.005",
+      "champion_before": "45",
+      "champion_after": "47",
+      "champion_live_accuracy": 0.8095,
+      "challenger_version": "47",
+      "challenger_holdout_accuracy": 0.8125,
+      "champion_holdout_accuracy": 0.7083,
+      "extra": {
+        "mlflow_run_id": "dace57f8caed428b949b469257daa541",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_047.csv",
+      "data_sha256": "ee6016892286d9a5b223512916b66f95425bf95c241fb7a8dd1d21eacf13607c",
+      "status": "kept_champion",
+      "reason": "challenger 0.917 did not beat champion 0.917 + 0.005",
+      "champion_before": "47",
+      "champion_after": "47",
+      "champion_live_accuracy": 0.8571,
+      "challenger_version": "48",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "f0ac2e9173164b38b1d82399fd048bd4",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_048.csv",
+      "data_sha256": "d6d0d350fc2365d3ace5fd901234d8799e46f8d7a8730c319a9a9a88fc03c655",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.844 + 0.005",
+      "champion_before": "47",
+      "champion_after": "49",
+      "champion_live_accuracy": 0.8661,
+      "challenger_version": "49",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.8438,
+      "extra": {
+        "mlflow_run_id": "53693e22a9464ee2bcae453b342d91fb",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_049.csv",
+      "data_sha256": "35dd2709fd0136ff25716d0b24802a626f878d1c396b677ce152f85c2ea1cb07",
+      "status": "promoted",
+      "reason": "challenger 0.812 >= champion 0.781 + 0.005",
+      "champion_before": "49",
+      "champion_after": "50",
+      "champion_live_accuracy": 0.8452,
+      "challenger_version": "50",
+      "challenger_holdout_accuracy": 0.8125,
+      "champion_holdout_accuracy": 0.7812,
+      "extra": {
+        "mlflow_run_id": "107f403c66fe4024aef0879ce7c0bf55",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_050.csv",
+      "data_sha256": "ed615de5c437e271124156e4ab1db1184cb5acd1f27820e9400c5544bccfde37",
+      "status": "promoted",
+      "reason": "challenger 0.917 >= champion 0.885 + 0.005",
+      "champion_before": "50",
+      "champion_after": "51",
+      "champion_live_accuracy": 0.8958,
+      "challenger_version": "51",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "1d15a1b413a4472fa0c29225f7722347",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_051.csv",
+      "data_sha256": "f48a496e655e9209b21d86cf36121cf784b5603638734174de6c13da0a54c026",
+      "status": "kept_champion",
+      "reason": "challenger 0.844 did not beat champion 0.865 + 0.005",
+      "champion_before": "51",
+      "champion_after": "51",
+      "champion_live_accuracy": 0.9018,
+      "challenger_version": "52",
+      "challenger_holdout_accuracy": 0.8438,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "8295767609cd4fb4b284d120c022a965",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_052.csv",
+      "data_sha256": "04d84e3d669a88d51499925930bde3620d8fe7f5907d1cb19497a15f8c77f406",
+      "status": "kept_champion",
+      "reason": "challenger 0.823 did not beat champion 0.833 + 0.005",
+      "champion_before": "51",
+      "champion_after": "51",
+      "champion_live_accuracy": 0.8929,
+      "challenger_version": "53",
+      "challenger_holdout_accuracy": 0.8229,
+      "champion_holdout_accuracy": 0.8333,
+      "extra": {
+        "mlflow_run_id": "cb9a45779101442c9cb5f77c8bbf3fe8",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_053.csv",
+      "data_sha256": "0c117061ab34c30cc1c93745e03ff4e62b5d1b0d19fc756ee7906ab985324ee0",
+      "status": "promoted",
+      "reason": "challenger 0.875 >= champion 0.833 + 0.005",
+      "champion_before": "51",
+      "champion_after": "54",
+      "champion_live_accuracy": 0.8631,
+      "challenger_version": "54",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.8333,
+      "extra": {
+        "mlflow_run_id": "924ef59020f8418e9e2e032f6f92e630",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_054.csv",
+      "data_sha256": "76e33394cb496b62593195b55ae42edad7a591ba9b744557d7749f3c969892c4",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.948 + 0.005",
+      "champion_before": "54",
+      "champion_after": "55",
+      "champion_live_accuracy": 0.8839,
+      "challenger_version": "55",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.9479,
+      "extra": {
+        "mlflow_run_id": "ef0b8fa1dce2438d804628c26ea2bac4",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_055.csv",
+      "data_sha256": "14a135e7b9d954921b6150e43fcda821c5ac0153302c94cd63d4d32a3a8fed82",
+      "status": "kept_champion",
+      "reason": "challenger 0.979 did not beat champion 0.979 + 0.005",
+      "champion_before": "55",
+      "champion_after": "55",
+      "champion_live_accuracy": 0.9613,
+      "challenger_version": "56",
+      "challenger_holdout_accuracy": 0.9792,
+      "champion_holdout_accuracy": 0.9792,
+      "extra": {
+        "mlflow_run_id": "d36dd2d5a6114edb83fc8753d6d0f795",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_056.csv",
+      "data_sha256": "b3d199efb39fe3ea1050747c853200d4974098c0ac96319119764f0769ce5d31",
+      "status": "promoted",
+      "reason": "challenger 0.823 >= champion 0.490 + 0.005",
+      "champion_before": "55",
+      "champion_after": "57",
+      "champion_live_accuracy": 0.744,
+      "challenger_version": "57",
+      "challenger_holdout_accuracy": 0.8229,
+      "champion_holdout_accuracy": 0.4896,
+      "extra": {
+        "mlflow_run_id": "e90c3ba22365431fa14d6c39ddf77562",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_057.csv",
+      "data_sha256": "462748f7a9a7cc6bc81c79b82e6fd54fbb13dc31bb29a72e7bbed38e02d53113",
+      "status": "promoted",
+      "reason": "challenger 0.917 >= champion 0.865 + 0.005",
+      "champion_before": "57",
+      "champion_after": "58",
+      "champion_live_accuracy": 0.9018,
+      "challenger_version": "58",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "505658cefb7b41bbbab17fa8c54f7211",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_058.csv",
+      "data_sha256": "6cb1374ece943869ad706fc09c99a75948c2363e3343425cf501741788613eb6",
+      "status": "kept_champion",
+      "reason": "challenger 0.875 did not beat champion 0.885 + 0.005",
+      "champion_before": "58",
+      "champion_after": "58",
+      "champion_live_accuracy": 0.9405,
+      "challenger_version": "59",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "5ddfda625827499f81b94df6d889745d",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_059.csv",
+      "data_sha256": "ac6f10cef10956ac0d0c3960328b52d2c563e98df022653e8138cc1193770899",
+      "status": "promoted",
+      "reason": "challenger 0.927 >= champion 0.875 + 0.005",
+      "champion_before": "58",
+      "champion_after": "60",
+      "champion_live_accuracy": 0.869,
+      "challenger_version": "60",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "a1a564555ff24ee8b4bdd709e312c24e",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_060.csv",
+      "data_sha256": "9edfd9af9b496c903745b16ef99dd5ff2aae8083484739a821f38b56626e4edb",
+      "status": "promoted",
+      "reason": "challenger 0.875 >= champion 0.854 + 0.005",
+      "champion_before": "60",
+      "champion_after": "61",
+      "champion_live_accuracy": 0.8393,
+      "challenger_version": "61",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.8542,
+      "extra": {
+        "mlflow_run_id": "c960f729e27c4898bf488bc3cc64f310",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_061.csv",
+      "data_sha256": "2253a1e38bbf8035867db9c7132db491b4b5a2cd6fac9755a62f05dc18827baa",
+      "status": "promoted",
+      "reason": "challenger 0.948 >= champion 0.917 + 0.005",
+      "champion_before": "61",
+      "champion_after": "62",
+      "champion_live_accuracy": 0.8601,
+      "challenger_version": "62",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "d58c92b4c0b145b481c30fde7f51bed6",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_062.csv",
+      "data_sha256": "c78eb13920fb0c0ee89db86dbd9ab731a2621bc1ff1c26a8f708c9dda2d3fe64",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.885 + 0.005",
+      "champion_before": "62",
+      "champion_after": "63",
+      "champion_live_accuracy": 0.9018,
+      "challenger_version": "63",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "7d002429db8844f3a771202e2b191327",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_063.csv",
+      "data_sha256": "42e2479be1b047001cb1941d6c78b8e8302dd238748fe8fdff73bbdb9c8f0289",
+      "status": "promoted",
+      "reason": "challenger 0.948 >= champion 0.938 + 0.005",
+      "champion_before": "63",
+      "champion_after": "64",
+      "champion_live_accuracy": 0.9077,
+      "challenger_version": "64",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "11efce8077dd4ebc84ded68caab0b244",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_064.csv",
+      "data_sha256": "9a37210f239fb8b4d25270d79c77079b830b96b02b3d0dfe6e4dc38f36f58b97",
+      "status": "promoted",
+      "reason": "challenger 0.969 >= champion 0.958 + 0.005",
+      "champion_before": "64",
+      "champion_after": "65",
+      "champion_live_accuracy": 0.8661,
+      "challenger_version": "65",
+      "challenger_holdout_accuracy": 0.9688,
+      "champion_holdout_accuracy": 0.9583,
+      "extra": {
+        "mlflow_run_id": "9cc305e10a8444509b9d4c3c99e7f709",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_065.csv",
+      "data_sha256": "5747026ea78f942b196a77cd4a8caf658fcca624bce35e1ec683cbeaa365c30c",
+      "status": "failed_floor",
+      "reason": "holdout accuracy 0.865 < floor 0.873 (majority class 0.823 + 0.05)",
+      "champion_before": "65",
+      "champion_after": "65",
+      "champion_live_accuracy": 0.875,
+      "challenger_version": null,
+      "challenger_holdout_accuracy": 0.8646,
+      "champion_holdout_accuracy": 0.8438,
+      "extra": {
+        "mlflow_run_id": "3837989cb5704f95b18adb75f862ac90",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_066.csv",
+      "data_sha256": "d80c204eac9ae90ba16f30bb7095cccf216708d383ca7fb5521a87bbc0eb025b",
+      "status": "failed_floor",
+      "reason": "holdout accuracy 0.667 < floor 0.685 (majority class 0.635 + 0.05)",
+      "champion_before": "65",
+      "champion_after": "65",
+      "champion_live_accuracy": 0.8393,
+      "challenger_version": null,
+      "challenger_holdout_accuracy": 0.6667,
+      "champion_holdout_accuracy": 0.6458,
+      "extra": {
+        "mlflow_run_id": "afbc16519da1439eb021ff2bdf725d62",
+        "shuffle_labels": true
+      }
+    },
+    {
+      "batch": "week_066.csv",
+      "data_sha256": "d80c204eac9ae90ba16f30bb7095cccf216708d383ca7fb5521a87bbc0eb025b",
+      "status": "duplicate",
+      "reason": "identical bytes were already processed",
+      "champion_before": "65",
+      "champion_after": "65",
+      "champion_live_accuracy": null,
+      "challenger_version": null,
+      "challenger_holdout_accuracy": null,
+      "champion_holdout_accuracy": null,
+      "extra": {}
+    },
+    {
+      "batch": "week_067.csv",
+      "data_sha256": "6022f983eedc281afbd667ab79f5bed7de90f76e58c885b57b9f306d52a7d63d",
+      "status": "promoted",
+      "reason": "challenger 0.823 >= champion 0.635 + 0.005",
+      "champion_before": "65",
+      "champion_after": "66",
+      "champion_live_accuracy": 0.7351,
+      "challenger_version": "66",
+      "challenger_holdout_accuracy": 0.8229,
+      "champion_holdout_accuracy": 0.6354,
+      "extra": {
+        "mlflow_run_id": "9fd4a775c7654bbfb213fc3c27c3663b",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_068.csv",
+      "data_sha256": "86fc7ada203d2189bf8ae8c13eba53fa1a7f5e69ab7d9098857f6e673d8bad11",
+      "status": "promoted",
+      "reason": "challenger 0.927 >= champion 0.896 + 0.005",
+      "champion_before": "66",
+      "champion_after": "67",
+      "champion_live_accuracy": 0.8571,
+      "challenger_version": "67",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "c1483a2127c84859932b227440686243",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_069.csv",
+      "data_sha256": "072d94942cc0d758431cf50256c968e29c65b368cacd94ec3b16374a82665818",
+      "status": "promoted",
+      "reason": "challenger 0.896 >= champion 0.812 + 0.005",
+      "champion_before": "67",
+      "champion_after": "68",
+      "champion_live_accuracy": 0.8542,
+      "challenger_version": "68",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.8125,
+      "extra": {
+        "mlflow_run_id": "4000fa6d373a4ab08575d4ed7460c286",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_070.csv",
+      "data_sha256": "2612c1ecf1082fe4031b791dff30972ed0bf0157765658c361f59c1eeedec889",
+      "status": "promoted",
+      "reason": "challenger 0.781 >= champion 0.771 + 0.005",
+      "champion_before": "68",
+      "champion_after": "69",
+      "champion_live_accuracy": 0.8601,
+      "challenger_version": "69",
+      "challenger_holdout_accuracy": 0.7812,
+      "champion_holdout_accuracy": 0.7708,
+      "extra": {
+        "mlflow_run_id": "a75b6e14f4eb4a43bc173bb735e849e4",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_071.csv",
+      "data_sha256": "0b8b4b1d142d4a4c58fe16abcd0fe0345edc45f05276be015b9ec2ded5ac8ee3",
+      "status": "kept_champion",
+      "reason": "challenger 0.896 did not beat champion 0.906 + 0.005",
+      "champion_before": "69",
+      "champion_after": "69",
+      "champion_live_accuracy": 0.8452,
+      "challenger_version": "70",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "54157cfb87ff49c393e192fb53692047",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_072.csv",
+      "data_sha256": "69fb17c3f710df9050ebb39feb5d30e2694653bc122335cbdb6d97e7201a1307",
+      "status": "promoted",
+      "reason": "challenger 0.885 >= champion 0.875 + 0.005",
+      "champion_before": "69",
+      "champion_after": "71",
+      "champion_live_accuracy": 0.8899,
+      "challenger_version": "71",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "f0e15b4925bf4e00aa3769511dd33a0a",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_073.csv",
+      "data_sha256": "d9745b7fd5262ec0220bdc3f1dc398a9551efb7eaf534ce0c4f99fc8c4a5f239",
+      "status": "kept_champion",
+      "reason": "challenger 0.938 did not beat champion 0.938 + 0.005",
+      "champion_before": "71",
+      "champion_after": "71",
+      "champion_live_accuracy": 0.8661,
+      "challenger_version": "72",
+      "challenger_holdout_accuracy": 0.9375,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "4374cf63fa824096b27091545d8f5449",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_074.csv",
+      "data_sha256": "725669decef3453a40f91382ab0a7b3419e94dd7dc40e62c693e85de35af5381",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.865 + 0.005",
+      "champion_before": "71",
+      "champion_after": "73",
+      "champion_live_accuracy": 0.881,
+      "challenger_version": "73",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.8646,
+      "extra": {
+        "mlflow_run_id": "616858adcf9841cd8da0637996b0f6fc",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_075.csv",
+      "data_sha256": "97ff497650735160ab4dfa19eb832967302ad9256aadf85dc4f0b86a78475bb9",
+      "status": "promoted",
+      "reason": "challenger 0.875 >= champion 0.854 + 0.005",
+      "champion_before": "73",
+      "champion_after": "74",
+      "champion_live_accuracy": 0.8601,
+      "challenger_version": "74",
+      "challenger_holdout_accuracy": 0.875,
+      "champion_holdout_accuracy": 0.8542,
+      "extra": {
+        "mlflow_run_id": "0bd73bae6b7142b8ab66b26cb5fee491",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_076.csv",
+      "data_sha256": "b3bfc449623db8770ecb3fe7a1d56e3edc8916d5783f3639b73e8575a9208a8a",
+      "status": "kept_champion",
+      "reason": "challenger 0.906 did not beat champion 0.906 + 0.005",
+      "champion_before": "74",
+      "champion_after": "74",
+      "champion_live_accuracy": 0.9167,
+      "challenger_version": "75",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "961fa8d75f48407ba1795a596fc5780a",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_077.csv",
+      "data_sha256": "7f1f7a776d4803436614eef6e636e4e85ec0d0f9bc3ff5f3d38726a1ced82986",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.906 + 0.005",
+      "champion_before": "74",
+      "champion_after": "74",
+      "champion_live_accuracy": 0.9048,
+      "challenger_version": "76",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "6f2bb907e9924d3d85a9ec0fd7ad4467",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_078.csv",
+      "data_sha256": "4204a03b6bc63a0d327c2680c5076d00c5c1e9098dad451912fb1fdb6bab016c",
+      "status": "promoted",
+      "reason": "challenger 0.854 >= champion 0.792 + 0.005",
+      "champion_before": "74",
+      "champion_after": "77",
+      "champion_live_accuracy": 0.878,
+      "challenger_version": "77",
+      "challenger_holdout_accuracy": 0.8542,
+      "champion_holdout_accuracy": 0.7917,
+      "extra": {
+        "mlflow_run_id": "867e957bbbcd46ba985717df7a5329eb",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_079.csv",
+      "data_sha256": "333af567e4ba590e48503cd14d3510f2c77f2ad077eadd3974f6f9d222bedb05",
+      "status": "promoted",
+      "reason": "challenger 0.958 >= champion 0.896 + 0.005",
+      "champion_before": "77",
+      "champion_after": "78",
+      "champion_live_accuracy": 0.9226,
+      "challenger_version": "78",
+      "challenger_holdout_accuracy": 0.9583,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "5662bd946e68458da195022e797f412a",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_080.csv",
+      "data_sha256": "64379d1ba31fcbbe01ffc84009cc4b81ce4caa12c633105e17f8c168634abb79",
+      "status": "kept_champion",
+      "reason": "challenger 0.906 did not beat champion 0.906 + 0.005",
+      "champion_before": "78",
+      "champion_after": "78",
+      "champion_live_accuracy": 0.9286,
+      "challenger_version": "79",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "18db0fc4590a4c8b86d5f55fbc296bf7",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_081.csv",
+      "data_sha256": "86e4a12455ed5535f1f1a487222165553424a06926db087ff92b16c2c34cc8c1",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.896 + 0.005",
+      "champion_before": "78",
+      "champion_after": "78",
+      "champion_live_accuracy": 0.8661,
+      "challenger_version": "80",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "8e7a947cc03b474e8f2f481e80e8c35c",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_082.csv",
+      "data_sha256": "f55303f2c09c01c4a1728cca6352b231501c71fe856256ba0a766639ecf2b6a2",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.875 + 0.005",
+      "champion_before": "78",
+      "champion_after": "81",
+      "champion_live_accuracy": 0.878,
+      "challenger_version": "81",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "1dd2abc3c6f84bbe8a99e6f43d468927",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_083.csv",
+      "data_sha256": "94ee8f38612f8ba582541c1e304bdfa712661d2dc1f7c9dc6bfcfebe58724469",
+      "status": "promoted",
+      "reason": "challenger 0.906 >= champion 0.875 + 0.005",
+      "champion_before": "81",
+      "champion_after": "82",
+      "champion_live_accuracy": 0.872,
+      "challenger_version": "82",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "b84d83d4153240cb946fdf44927dafe0",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_084.csv",
+      "data_sha256": "9b27a1b5d693ecdb8f6b6ede6b98143d42f01a1c343d5bc5ddcd8e961daa0567",
+      "status": "promoted",
+      "reason": "challenger 0.896 >= champion 0.875 + 0.005",
+      "champion_before": "82",
+      "champion_after": "83",
+      "champion_live_accuracy": 0.8482,
+      "challenger_version": "83",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "6abebbdb80b549cf9b84197efc10698a",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_085.csv",
+      "data_sha256": "17accb75bb45056d27e61f43cc2a0cf069998d29069f5b5148ecc2e68ba71a75",
+      "status": "promoted",
+      "reason": "challenger 0.844 >= champion 0.802 + 0.005",
+      "champion_before": "83",
+      "champion_after": "84",
+      "champion_live_accuracy": 0.8631,
+      "challenger_version": "84",
+      "challenger_holdout_accuracy": 0.8438,
+      "champion_holdout_accuracy": 0.8021,
+      "extra": {
+        "mlflow_run_id": "be518716d8b841e8ba847049777dc783",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_086.csv",
+      "data_sha256": "c83b498c5b578e987b19a69454638e943895292ab1be2865741dc5987a2bd2f5",
+      "status": "kept_champion",
+      "reason": "challenger 0.917 did not beat champion 0.927 + 0.005",
+      "champion_before": "84",
+      "champion_after": "84",
+      "champion_live_accuracy": 0.9137,
+      "challenger_version": "85",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "cdf039c938c4443ea8d990c074bb6ab7",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_087.csv",
+      "data_sha256": "07c8c088b90aa6c1c3f450f3bd3c2bc530aa743329b87f8bef7a7f61dcdad178",
+      "status": "promoted",
+      "reason": "challenger 0.896 >= champion 0.885 + 0.005",
+      "champion_before": "84",
+      "champion_after": "86",
+      "champion_live_accuracy": 0.9286,
+      "challenger_version": "86",
+      "challenger_holdout_accuracy": 0.8958,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "d7476319768b482e93cc422cd5cea0b6",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_088.csv",
+      "data_sha256": "0c4e1da18e0c0425a18acfbc3245e4d9aefd69ddebb0af52da3217e328056a24",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.885 + 0.005",
+      "champion_before": "86",
+      "champion_after": "86",
+      "champion_live_accuracy": 0.9196,
+      "challenger_version": "87",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.8854,
+      "extra": {
+        "mlflow_run_id": "ba0b66f73bc24c54bb6a3bb78cbcffc1",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_089.csv",
+      "data_sha256": "49f91e2c924bd21eef92ed6a744b8fe72f53cec54239ef06743685db3a541b93",
+      "status": "kept_champion",
+      "reason": "challenger 0.865 did not beat champion 0.875 + 0.005",
+      "champion_before": "86",
+      "champion_after": "86",
+      "champion_live_accuracy": 0.9226,
+      "challenger_version": "88",
+      "challenger_holdout_accuracy": 0.8646,
+      "champion_holdout_accuracy": 0.875,
+      "extra": {
+        "mlflow_run_id": "a658faafc9be478f99baa4c6f055edb2",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_090.csv",
+      "data_sha256": "eab901d3a07b04989281ad4ed897cda90a98700625d7cd2e89bcda0db52cd293",
+      "status": "kept_champion",
+      "reason": "challenger 0.917 did not beat champion 0.917 + 0.005",
+      "champion_before": "86",
+      "champion_after": "86",
+      "champion_live_accuracy": 0.8988,
+      "challenger_version": "89",
+      "challenger_holdout_accuracy": 0.9167,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "5a8ebdee10984bdfba33f61efb67f3ce",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_091.csv",
+      "data_sha256": "d5d916b387cf7faaa4f40797061f49effb96496baf0ab2eb2dcec01f1c0b317a",
+      "status": "kept_champion",
+      "reason": "challenger 0.885 did not beat champion 0.896 + 0.005",
+      "champion_before": "86",
+      "champion_after": "86",
+      "champion_live_accuracy": 0.875,
+      "challenger_version": "90",
+      "challenger_holdout_accuracy": 0.8854,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "77f452e08b634284a7f6df6854baeffe",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_092.csv",
+      "data_sha256": "c572318b5a43546024e41502fed17dfc998a71b044cd7c998c23d291ec393ff5",
+      "status": "promoted",
+      "reason": "challenger 0.969 >= champion 0.896 + 0.005",
+      "champion_before": "86",
+      "champion_after": "91",
+      "champion_live_accuracy": 0.8423,
+      "challenger_version": "91",
+      "challenger_holdout_accuracy": 0.9688,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "7305429c4608439fb163c51ba6d870ee",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_093.csv",
+      "data_sha256": "d7109a2709d36d0a79334a2b4afc37ecd16f7eacd6c6ff6234dbdcc413b92717",
+      "status": "kept_champion",
+      "reason": "challenger 0.906 did not beat champion 0.906 + 0.005",
+      "champion_before": "91",
+      "champion_after": "91",
+      "champion_live_accuracy": 0.8601,
+      "challenger_version": "92",
+      "challenger_holdout_accuracy": 0.9062,
+      "champion_holdout_accuracy": 0.9062,
+      "extra": {
+        "mlflow_run_id": "d8c1f658b24c4fe4b13e4be52945318e",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_094.csv",
+      "data_sha256": "0498df08ef169cfa287de2f48a584f31dd1476505fb0a1ae98c777ff6761107c",
+      "status": "kept_champion",
+      "reason": "challenger 0.844 did not beat champion 0.854 + 0.005",
+      "champion_before": "91",
+      "champion_after": "91",
+      "champion_live_accuracy": 0.8393,
+      "challenger_version": "93",
+      "challenger_holdout_accuracy": 0.8438,
+      "champion_holdout_accuracy": 0.8542,
+      "extra": {
+        "mlflow_run_id": "df774a4b1b734b8f91786cbbefe60d46",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_095.csv",
+      "data_sha256": "f716b69f6ec4023bce9bbb680ee6673deb6f00d5efdd55016ff91608ae752267",
+      "status": "kept_champion",
+      "reason": "challenger 0.854 did not beat champion 0.896 + 0.005",
+      "champion_before": "91",
+      "champion_after": "91",
+      "champion_live_accuracy": 0.9018,
+      "challenger_version": "94",
+      "challenger_holdout_accuracy": 0.8542,
+      "champion_holdout_accuracy": 0.8958,
+      "extra": {
+        "mlflow_run_id": "fbe50a613c6a42778742a006835d975f",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_096.csv",
+      "data_sha256": "6e677aa52a7eaef9bf6dc1bb05c5f408b0811eca0d34f41e176373987837693f",
+      "status": "promoted",
+      "reason": "challenger 0.927 >= champion 0.917 + 0.005",
+      "champion_before": "91",
+      "champion_after": "95",
+      "champion_live_accuracy": 0.875,
+      "challenger_version": "95",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.9167,
+      "extra": {
+        "mlflow_run_id": "6594539d11c54b75bfc1a361d420e265",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_097.csv",
+      "data_sha256": "7434dea3ca63ef6559895242994cc2e1b12813537d39b33ec26fde0666a1e788",
+      "status": "promoted",
+      "reason": "challenger 0.948 >= champion 0.927 + 0.005",
+      "champion_before": "95",
+      "champion_after": "96",
+      "champion_live_accuracy": 0.8929,
+      "challenger_version": "96",
+      "challenger_holdout_accuracy": 0.9479,
+      "champion_holdout_accuracy": 0.9271,
+      "extra": {
+        "mlflow_run_id": "5ffa66bf6ea444df86bb55790d2d766e",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_098.csv",
+      "data_sha256": "4ea9397808a8ecb0190f38f158cd0c18f4f25d5ba9845d43d5639ba13e28ad55",
+      "status": "kept_champion",
+      "reason": "challenger 0.927 did not beat champion 0.938 + 0.005",
+      "champion_before": "96",
+      "champion_after": "96",
+      "champion_live_accuracy": 0.9196,
+      "challenger_version": "97",
+      "challenger_holdout_accuracy": 0.9271,
+      "champion_holdout_accuracy": 0.9375,
+      "extra": {
+        "mlflow_run_id": "1dd273f4620e4d6a8d2a350707c16de5",
+        "shuffle_labels": false
+      }
+    },
+    {
+      "batch": "week_099.csv",
+      "data_sha256": "f2a372bcdcc312e7b311c6e223b23a1d0bde6e591f3ebb9f2fe4737499f5645c",
+      "status": "promoted",
+      "reason": "challenger 0.823 >= champion 0.802 + 0.005",
+      "champion_before": "96",
+      "champion_after": "98",
+      "champion_live_accuracy": 0.8095,
+      "challenger_version": "98",
+      "challenger_holdout_accuracy": 0.8229,
+      "champion_holdout_accuracy": 0.8021,
+      "extra": {
+        "mlflow_run_id": "bab84c9f75c64bb29b89a43b106283d0",
+        "shuffle_labels": false
+      }
+    }
+  ]
+}

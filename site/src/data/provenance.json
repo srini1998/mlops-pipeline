@@ -1,0 +1,18 @@
+{
+  "source": "https://www.openml.org/d/151",
+  "name": "Elec2 / electricity (Harries, 1999)",
+  "license": "OpenML lists Public",
+  "rows": 45312,
+  "source_sha256": "2d86fbc74c69a5c04bcde0119bce280dd6d8efa0115987edc75b77ccf024d7f2",
+  "columns": [
+    "day",
+    "period",
+    "nswprice",
+    "nswdemand",
+    "vicprice",
+    "vicdemand",
+    "transfer",
+    "UP"
+  ],
+  "scope": "Historical normalized half-hour records. Not live energy prices or a trading forecast."
+}
