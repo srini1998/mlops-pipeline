@@ -1,5 +1,7 @@
 # MLOps Pipeline: event-driven retraining on real drifting data
 
+**Current public website:** [current-ml.vercel.app](https://current-ml.vercel.app). The interface is English-only and its main task requires no AI-weight download. See [current interface, datasets and execution boundaries](site/INTERFACE.md). The backend experiments and historical measurements below are separate from the current public UI.
+
 Upload a new week of data and the pipeline validates it, versions it, scores the model currently
 in production on that week, trains a challenger, and promotes it **only if it passes the gates**.
 A prediction service always serves the registry's champion and hot-swaps on promotion or rollback.
