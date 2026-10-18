@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/electricity",
+      "destination": "/index.html"
+    }
+  ]
+}
