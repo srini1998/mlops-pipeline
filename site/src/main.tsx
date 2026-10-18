@@ -46,6 +46,7 @@ function App() {
     setPrevious(champ);
     setChamp(result.candidate);
     setResult(null);
+    setExplanation("");
     log({ action: "promote", week, model: result.candidate });
   }
   async function explain() {
@@ -123,6 +124,7 @@ function App() {
             <label>
               {t("Replay week", "リプレイの週")}
               <input
+                disabled={busy}
                 aria-label="Replay week"
                 type="range"
                 min="8"
@@ -146,10 +148,12 @@ function App() {
             <label>
               {t("Required improvement", "必要な改善幅")}
               <select
+                disabled={busy}
                 value={gain}
                 onChange={(e) => {
                   setGain(Number(e.target.value));
                   setResult(null);
+                  setExplanation("");
                 }}
               >
                 {[0, 0.01, 0.03, 0.05].map((n) => (
@@ -159,7 +163,7 @@ function App() {
                 ))}
               </select>
             </label>
-            <button className="cta" onClick={run}>
+            <button className="cta" onClick={run} disabled={busy}>
               {t("Train & evaluate", "学習して比較")}
             </button>
             <p className="note">
@@ -209,7 +213,7 @@ function App() {
                 <button
                   className="cta"
                   onClick={promote}
-                  disabled={!result.pass}
+                  disabled={busy || !result.pass}
                 >
                   {t("Promote challenger", "挑戦モデルを昇格")}
                 </button>
@@ -224,12 +228,13 @@ function App() {
             )}
             <button
               className="quiet"
-              disabled={!previous}
+              disabled={busy || !previous}
               onClick={() => {
                 if (previous) {
                   setChamp(previous);
                   setPrevious(null);
                   setResult(null);
+                  setExplanation("");
                   log({ action: "rollback", week });
                 }
               }}
