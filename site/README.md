@@ -1,6 +1,6 @@
 # Current / Matchday
 
-Train small models on real football seasons and compare releases on later matches.
+Train small models on real soccer seasons and compare releases on later matches.
 
 The public interface is English-only. Its main task requires no AI weights, account or paid API. See [current interface, data, verification and limits](INTERFACE.md) for the exact execution boundaries and the separately retained backend experiments.
 

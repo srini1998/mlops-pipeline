@@ -44,7 +44,7 @@ function App() {
     <Shell name="current / matchday" number="03" ja={false} toggle={() => {}}>
       <section className="hero match-hero">
         <div>
-          <p className="eyebrow">FOOTBALL MEETS MACHINE LEARNING</p>
+          <p className="eyebrow">SOCCER MEETS MACHINE LEARNING</p>
           <h1>
             New season.
             <br />
@@ -280,7 +280,7 @@ function App() {
           <p className="eyebrow">THE DATA BEHIND THE MATCHDAY</p>
           <h2>Real matches. Small model. Clear limits.</h2>
           <p>
-            This is a release-management tool illustrated through football:
+            This is a release-management tool illustrated through soccer:
             train, compare, activate and roll back. It helps show why a newer
             model should not replace a working model automatically.
           </p>
