@@ -11,6 +11,8 @@ import {
   type FootballModel,
 } from "./football-engine";
 import { Shell, Trace } from "./ui";
+import { useModel } from "./ai/useModel";
+import { checkReview, reviewPrompt, type GateFacts } from "./review-check";
 import "./styles.css";
 const Electricity = lazy(() =>
   import("./ElectricityLab").then((m) => ({ default: m.ElectricityLab })),
@@ -40,6 +42,37 @@ function App() {
     match = test[idx],
     prediction = probability(active, match.x);
   const log = (e: unknown) => setEntries((a) => [...a, e]);
+  const ai = useModel();
+  const [review, setReview] = useState<{
+    text: string;
+    model?: string;
+    ms: number;
+    check: ReturnType<typeof checkReview>;
+    key: string;
+  } | null>(null),
+    [reviewBusy, setReviewBusy] = useState(false),
+    [reviewError, setReviewError] = useState("");
+  const facts: GateFacts | null = gate
+    ? { ...gate, matches: validation.length }
+    : null;
+  const factKey = facts ? JSON.stringify(facts) : "";
+  async function explainGate() {
+    if (!facts) return;
+    setReviewBusy(true);
+    setReviewError("");
+    setReview(null);
+    try {
+      const prompt = reviewPrompt(facts);
+      const r = await ai.generate([{ role: "user", content: prompt }], undefined, 200);
+      const check = checkReview(r.text, facts);
+      setReview({ text: r.text.trim(), model: r.model, ms: r.ms, check, key: factKey });
+      log({ action: "cloud-review", prompt, ...r, check });
+    } catch (e) {
+      setReviewError(String(e instanceof Error ? e.message : e));
+    } finally {
+      setReviewBusy(false);
+    }
+  }
   return (
     <Shell name="current / matchday" number="03" ja={false} toggle={() => {}}>
       <section className="hero match-hero">
@@ -195,6 +228,53 @@ function App() {
                   <strong>{pct(gate.candidate.accuracy)}</strong>
                   <span>Challenger accuracy</span>
                 </div>
+              </div>
+            )}
+            {gate && (
+              <div className="reviewer" aria-live="polite">
+                <p className="decision-label">
+                  OPTIONAL CLOUD REVIEWER · CHECKED, NOT TRUSTED
+                </p>
+                <p>
+                  An AI agent writes the release note for this decision. Code
+                  then checks that its verdict matches the gate and that every
+                  number it quotes is one of the measured values above.
+                </p>
+                <button
+                  onClick={explainGate}
+                  disabled={reviewBusy || ai.state.phase !== "ready"}
+                >
+                  {reviewBusy ? "Writing release note…" : "Write release note"}
+                </button>
+                {ai.state.phase !== "ready" && (
+                  <p className="note">
+                    {ai.state.message ||
+                      "Checking whether the free cloud model is connected…"}
+                  </p>
+                )}
+                {reviewError && <p role="alert">{reviewError}</p>}
+                {review && review.key === factKey && (
+                  <div className="review-out">
+                    <blockquote>{review.text}</blockquote>
+                    <ul>
+                      <li className={review.check.verdictOk ? "ok" : "bad"}>
+                        {review.check.verdictOk
+                          ? "✓ Verdict matches the gate"
+                          : `✗ Verdict ${review.check.verdict ?? "missing"} contradicts the gate — discard this note`}
+                      </li>
+                      <li className={review.check.unknown.length ? "bad" : "ok"}>
+                        {review.check.unknown.length
+                          ? `✗ Unverified numbers: ${review.check.unknown.join(", ")}`
+                          : `✓ All ${review.check.numbers.length} quoted numbers match the measured metrics`}
+                      </li>
+                    </ul>
+                    <p className="note">
+                      {review.model} on Groq’s free plan · {review.ms} ms. The
+                      gate decision above is computed by code; this note never
+                      changes it.
+                    </p>
+                  </div>
+                )}
               </div>
             )}
             <details>
